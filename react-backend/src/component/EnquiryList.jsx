@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Table } from "flowbite-react";
 import axios from "axios";
+import config from "../config";
 const EnquiryList = ({ data, getAllEnquiry, swal, setFormData }) => {
   let deleteRow = (id) => {
     swal({
@@ -17,7 +18,7 @@ const EnquiryList = ({ data, getAllEnquiry, swal, setFormData }) => {
       })
       .then(() => {
         axios
-          .delete(`https://user-enquiry-backend.onrender.com`)
+          .delete(`${config.backendUrl}/api/web/enquiry/delete/${id}`)
           .then((res) => {
             console.log(res);
             getAllEnquiry();
@@ -32,7 +33,7 @@ const EnquiryList = ({ data, getAllEnquiry, swal, setFormData }) => {
 
   let handelEdit = (id) => {
     axios
-      .get(`https://user-enquiry-backend.onrender.com`)
+      .get(`${config.backendUrl}/api/web/enquiry/single/${id}`)
       .then((res) => {
         setFormData(res.data.enquiry);
       });
