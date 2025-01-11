@@ -17,7 +17,7 @@ const Enquiry = () => {
 
   let getAllEnquries = () => {
     axios
-      .get(config.backendUrl)
+      .get(`${config.backendUrl}/api/web/enquiry/view`)
       .then((res) => {
         // toast.success("Enquiries fetched successfully");
         return res.data;
