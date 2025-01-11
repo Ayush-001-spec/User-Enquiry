@@ -17,7 +17,7 @@ const EnquiryList = ({ data, getAllEnquiry, swal, setFormData }) => {
       })
       .then(() => {
         axios
-          .delete(`http://localhost:8000/api/web/enquiry/delete/${id}`)
+          .delete(`https://user-enquiry-backend.onrender.com`)
           .then((res) => {
             console.log(res);
             getAllEnquiry();
@@ -32,7 +32,7 @@ const EnquiryList = ({ data, getAllEnquiry, swal, setFormData }) => {
 
   let handelEdit = (id) => {
     axios
-      .get(`http://localhost:8000/api/web/enquiry/single/${id}`)
+      .get(`https://user-enquiry-backend.onrender.com`)
       .then((res) => {
         setFormData(res.data.enquiry);
       });

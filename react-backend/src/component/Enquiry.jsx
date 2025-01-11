@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Button, Checkbox, Label, Textarea, TextInput } from "flowbite-react";
+import { Button,  Label, Textarea, TextInput } from "flowbite-react";
 import { ToastContainer, toast } from "react-toastify";
 import EnquiryList from "./EnquiryList";
 import swal from "sweetalert2/dist/sweetalert2.js";
@@ -16,7 +16,7 @@ const Enquiry = () => {
 
   let getAllEnquries = () => {
     axios
-      .get("http://localhost:8000/api/web/enquiry/view")
+      .get("https://user-enquiry-backend.onrender.com")
       .then((res) => {
         // toast.success("Enquiries fetched successfully");
         return res.data;
@@ -44,7 +44,7 @@ const Enquiry = () => {
     e.preventDefault();
     if (formData._id) {
       axios
-        .put(`http://localhost:8000/api/web/enquiry/update/${formData._id}`, formData)
+        .put(`https://user-enquiry-backend.onrender.com`, formData)
         .then((res) => {
           toast.success("Enquiry updated successfully");
           setFormData({ name: "", email: "", phone: "", message: "", _id: "" }); // Reset form after successful submissions
@@ -53,7 +53,7 @@ const Enquiry = () => {
     } else {
       // Simulating a delay for the API call to mimic a real-world scenario
       axios
-        .post("http://localhost:8000/api/web/enquiry/insert", formData)
+        .post("https://user-enquiry-backend.onrender.com", formData)
         .then((res) => {
           toast.success("Enquiry saved successfully");
           setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form after successful submissions
