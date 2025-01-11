@@ -16,7 +16,7 @@ app.use("/api/web/enquiry/", enquiryRouter);
 // Connect to MongoDB
 mongoose
   .connect(
-    "mongodb+srv://ayushdhiman781:G7uRUWmYYthAKjEA@cluster0.58exu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://ayushdhiman781:eZcCtE93Uku3WR9t@cluster0.udw8y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
     console.log("Database connected successfully");
