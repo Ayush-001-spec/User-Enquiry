@@ -46,7 +46,7 @@ const Enquiry = () => {
     if (formData._id) {
       axios
         .put(
-          `http://localhost:8000/api/web/enquiry/update/${formData._id}`,
+          `${config.backendUrl}/api/web/enquiry/update/${formData._id}`,
           formData
         )
         .then((res) => {
@@ -57,7 +57,7 @@ const Enquiry = () => {
     } else {
       // Simulating a delay for the API call to mimic a real-world scenario
       axios
-        .post("http://localhost:8000/api/web/enquiry/insert", formData)
+        .post(`${config.backendUrl}/api/web/enquiry/insert`, formData)
         .then((res) => {
           toast.success("Enquiry saved successfully");
           setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form after successful submissions
