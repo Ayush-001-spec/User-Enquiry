@@ -38,7 +38,7 @@ lerna-debug.log*
 node_modules/
 
 # Local environment files
-.env
+
 
 # Editor directories and files
 .vscode/
